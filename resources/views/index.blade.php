@@ -6,10 +6,10 @@
         <title>DIW</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         
-        <link rel="stylesheet" href="{!! asset('css/app.css') !!}">
+        <link rel="stylesheet" href="{!! asset('assets/css/app.css') !!}">
 
         <!-- <script async src="{!! asset('js/plugins.js') !!}"></script> -->
-        <!-- <script async src="{!! asset('js/app.js') !!}"></script> -->
+        <script async src="{!! asset('assets/js/app.js') !!}"></script>
     </head>
     <body>
         <!--[if lt IE 8]>

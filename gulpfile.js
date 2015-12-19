@@ -1,5 +1,3 @@
-var elixir = require('laravel-elixir');
-
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management
@@ -11,11 +9,23 @@ var elixir = require('laravel-elixir');
  |
  */
 
+var elixir = require('laravel-elixir');
+
+elixir.config.sourcemaps = false;
+
 elixir(function(mix) {
-	mix.sass('app.scss');
-	mix.browserSync({
-		online: false,
-		proxy : 'localhost:8000',
-		notify: false
-  });
+	mix
+		.browserSync({
+			online: false,
+			proxy : 'localhost:8000',
+			files : [
+				{
+					match: ['public/assets/**/*']
+				}
+			]
+		})
+
+		.sass('app.scss', 'public/assets/css/app.css')
+
+		.scripts(['app.js'], 'public/assets/js/app.js');
 });
