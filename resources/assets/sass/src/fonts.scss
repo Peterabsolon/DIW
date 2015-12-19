@@ -1,0 +1,37 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(/fonts/montserrat/montserrat-light-webfont.eot);
+    src: url(/fonts/montserrat/montserrat-light-webfont.eot?#iefix) format("embedded-opentype"), url(/fonts/montserrat/montserrat-light-webfont.woff) format("woff"), url(/fonts/montserrat/montserrat-light-webfont.ttf) format("truetype"), url(/fonts/montserrat/montserrat-light-webfont.svg#Montserrat) format("svg");
+    font-weight: 300;
+    font-style: normal
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(/fonts/montserrat/montserrat-regular-webfont.eot);
+    src: url(/fonts/montserrat/montserrat-regular-webfont.eot?#iefix) format("embedded-opentype"), url(/fonts/montserrat/montserrat-regular-webfont.woff) format("woff"), url(/fonts/montserrat/montserrat-regular-webfont.ttf) format("truetype"), url(/fonts/montserrat/montserrat-regular-webfont.svg#Montserrat) format("svg");
+    font-weight: 400;
+    font-style: normal
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(/fonts/montserrat/montserrat-bold-webfont.eot);
+    src: url(/fonts/montserrat/montserrat-bold-webfont.eot?#iefix) format("embedded-opentype"), url(/fonts/montserrat/montserrat-bold-webfont.woff) format("woff"), url(/fonts/montserrat/montserrat-bold-webfont.ttf) format("truetype"), url(/fonts/montserrat/montserrat-bold-webfont.svg#Montserrat) format("svg");
+    font-weight: 700;
+    font-style: normal
+}
+
+body,
+html,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+span,
+input,
+button {
+    font-family: 'Montserrat';
+}

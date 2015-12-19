@@ -1,0 +1,33 @@
+.btn-toggle-menu {
+	position: absolute;
+	z-index: 4;
+	top: 33px;
+	right: 20px;
+	background: none;
+	border: none;
+	width: 30px;
+	height: 25px;
+	.bar {
+		display: block;
+		width: 100%;
+		height: 4px;
+		background: #fff;
+		position: absolute;
+		&:nth-child(1) {
+			top: 0;
+		}
+		&:nth-child(2),
+		&:nth-child(3) {
+			top: 10px;
+		}
+	}
+}
+
+.header {
+	position: absolute;
+	left: 0;
+	right: 0;
+	.site-logo {
+
+	}
+}

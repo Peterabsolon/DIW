@@ -1,0 +1,39 @@
+::selection {
+	background: #b3d4fc;
+	text-shadow: none
+}
+
+.divider {
+	width: 100%;
+	margin-top: -30px;
+	margin-bottom: 30px;
+	height: 0;
+	border-color: transparent #fff #fff transparent;
+	border-style: solid;
+	&.inverse {
+		border-color: transparent #fff;
+		margin-top: 0;
+		margin-bottom: -30px;
+	}
+}
+
+.btn {
+	cursor: pointer;
+	text-decoration: none;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 14px;
+	padding: 8px 25px;
+	transition: .15s ease-in all;
+}
+
+.btn-primary {
+	border: 2px solid $color-primary;
+	color: $color-primary;
+	&:hover,
+	&:focus {
+		background: $color-primary;
+		color: #fff;
+	}
+}
+
