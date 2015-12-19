@@ -2,8 +2,19 @@
 	height: 100vh;
 	position: relative;
 	background: url('/images/site/hero-homepage.jpg');
-	background-size: auto 100%;
+	background-size: cover;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	text-align: center;
+	.hero-title {
+		color: #fff;
+		text-transform: uppercase;
+		font-weight: bold;
+		text-shadow: 1px 1px 5px rgba(0,0,0,.3);
+		font-size: 32px;
+		@include breakpoint($small) {
+			font-size: 40px;
+		}
+	}
 }

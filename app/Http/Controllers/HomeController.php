@@ -19,8 +19,9 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {	
-        $email = Option::where('key', 'contact.email')->first()->value;
-        $phone = Option::where('key', 'contact.phone')->first()->value;
+        $email  = Option::where('key', 'contact.email')->first()->value;
+        $phone  = Option::where('key', 'contact.phone')->first()->value;
+        $slogan = Option::where('key', 'site.slogan')->first()->value;
 
         $social_links = array(
             'facebook'  => Option::where('key', 'facebook.link')->first()->value,
@@ -36,6 +37,7 @@ class HomeController extends Controller
             'photos'        => Photo::orderBy('sort_order')->get(),
             'email'         => $email,
             'phone'         => $phone,
+            'slogan'        => $slogan,
             'social_links'  => $social_links
         );
 

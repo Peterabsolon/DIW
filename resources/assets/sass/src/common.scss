@@ -10,6 +10,8 @@
 	height: 0;
 	border-color: transparent #fff #fff transparent;
 	border-style: solid;
+	border-width: 0 0 30px 100vw;
+	position: relative;
 	&.inverse {
 		border-color: transparent #fff;
 		margin-top: 0;
@@ -37,3 +39,12 @@
 	}
 }
 
+.btn-secondary {
+	border: 2px solid #fff;
+	color: #fff;
+	&:hover,
+	&:focus {
+		background: #fff;
+		color: #000;
+	}
+}

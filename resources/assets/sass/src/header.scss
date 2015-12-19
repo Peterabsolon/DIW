@@ -1,18 +1,19 @@
-body {
-	
-}
-
 .btn-toggle-menu {
 	margin: 0;
 	padding: 0;
 	position: absolute;
 	z-index: 4;
 	top: 33px;
-	right: $content-padding;
+	right: 20px;
 	background: none;
 	border: none;
 	width: 30px;
 	height: 25px;
+	outline: none;
+	@include breakpoint($medium) {
+		top: 45px;
+		right: 30px;
+	}
 	&.toggled {
 		.bar {
 			&:nth-child(1),
@@ -52,7 +53,26 @@ body {
 	position: absolute;
 	left: 0;
 	right: 0; 
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+	@include breakpoint($medium) {
+		display: block;
+		top: 30px;
+		left: 30px;
+	}
 	.site-logo {
-  		
+		.mobile {
+			margin-top: 20px;
+			@include breakpoint($medium) {
+				display: none;
+			}
+		}
+  		.desktop {
+  			display: none;
+  			@include breakpoint($medium) {
+				display: block;
+  			}
+  		}
 	}  
 }

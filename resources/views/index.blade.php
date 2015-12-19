@@ -38,7 +38,7 @@
 
                     <section class="hero">
                         <div class="hero-content">
-                            <h2 class="hero-title">Len ďalšia <br> kreatívna agentúra?</h2>
+                            <h2 class="hero-title">{{ $slogan }}</h2>
                             <a href="{!! route('portfolio') !!}" class="btn btn-secondary">Naše práce</a>
                         </div>
                     </section> {{-- /.hero --}}
@@ -111,7 +111,8 @@
                 <a href="{{ route('home') }}">Domov</a>
                 <a href="{{ route('portfolio') }}">Portfólio</a>
                 <a href="{{ route('contact') }}">Kontakt</a>
-            </nav>
+            </nav> {{-- ./navigation --}}
+
         </div> {{-- ./perspective --}}
     </body>
 </html>

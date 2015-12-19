@@ -479,6 +479,15 @@ button {
   font-family: 'Montserrat';
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.1;
+}
+
 ::-moz-selection {
   background: #b3d4fc;
   text-shadow: none;
@@ -496,6 +505,8 @@ button {
   height: 0;
   border-color: transparent #fff #fff transparent;
   border-style: solid;
+  border-width: 0 0 30px 100vw;
+  position: relative;
 }
 
 .divider.inverse {
@@ -525,6 +536,17 @@ button {
   color: #fff;
 }
 
+.btn-secondary {
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background: #fff;
+  color: #000;
+}
+
 .btn-toggle-menu {
   margin: 0;
   padding: 0;
@@ -536,6 +558,14 @@ button {
   border: none;
   width: 30px;
   height: 25px;
+  outline: none;
+}
+
+@media (min-width: 992px) {
+  .btn-toggle-menu {
+    top: 45px;
+    right: 30px;
+  }
 }
 
 .btn-toggle-menu.toggled .bar:nth-child(1),
@@ -580,13 +610,48 @@ button {
   position: absolute;
   left: 0;
   right: 0;
+  z-index: 1;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+@media (min-width: 992px) {
+  .header {
+    display: block;
+    top: 30px;
+    left: 30px;
+  }
+}
+
+.header .site-logo .mobile {
+  margin-top: 20px;
+}
+
+@media (min-width: 992px) {
+  .header .site-logo .mobile {
+    display: none;
+  }
+}
+
+.header .site-logo .desktop {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .header .site-logo .desktop {
+    display: block;
+  }
 }
 
 .hero {
   height: 100vh;
   position: relative;
   background: url("/images/site/hero-homepage.jpg");
-  background-size: auto 100%;
+  background-size: cover;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -596,4 +661,19 @@ button {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+  text-align: center;
+}
+
+.hero .hero-title {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  font-size: 32px;
+}
+
+@media (min-width: 768px) {
+  .hero .hero-title {
+    font-size: 40px;
+  }
 }
