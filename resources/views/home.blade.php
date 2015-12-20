@@ -7,9 +7,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         
         <link rel="stylesheet" href="{!! asset('assets/css/app.css') !!}">
-
-        <!-- <script async src="{!! asset('js/plugins.js') !!}"></script> -->
-        <script async src="{!! asset('assets/js/app.js') !!}"></script>
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -38,7 +35,7 @@
 
                     <section class="hero">
                         <div class="hero-content">
-                            <h2 class="hero-title">{{ $slogan }}</h2>
+                            <h2 class="hero-title">{!! nl2br($slogan) !!}</h2>
                             <a href="{!! route('portfolio') !!}" class="btn btn-secondary">Naše práce</a>
                         </div>
                     </section> {{-- /.hero --}}
@@ -82,11 +79,11 @@
 
                     <section class="social-buttons">
                         <ul class="social-buttons-list">
-                            <li class="logo-facebook"><a href="{{ $social_links['facebook'] }}"><span class="icon">Facebook</span></a></li>
-                            <li class="logo-twitter"><a href="{{ $social_links['twitter'] }}"><span class="icon">Twitter</span></a></li>
-                            <li class="logo-youtube"><a href="{{ $social_links['youtube'] }}"><span class="icon">YouTube</span></a></li>
-                            <li class="logo-linkedin"><a href="{{ $social_links['linkedin'] }}"><span class="icon">LinkedIn</span></a></li>
-                            <li class="logo-instagram"><a href="{{ $social_links['instagram'] }}"><span class="icon">Instagram</span></a></li>
+                            <li><a class="logo-facebook" href="{{ $social_links['facebook'] }}"><span class="icon"></span></a></li>
+                            <li><a class="logo-twitter" href="{{ $social_links['twitter'] }}"><span class="icon"></span></a></li>
+                            <li><a class="logo-youtube" href="{{ $social_links['youtube'] }}"><span class="icon"></span></a></li>
+                            <li><a class="logo-linkedin" href="{{ $social_links['linkedin'] }}"><span class="icon"></span></a></li>
+                            <li><a class="logo-instagram" href="{{ $social_links['instagram'] }}"><span class="icon"></span></a></li>
                         </ul>
                     </section> {{-- /.social-buttons --}}
 
@@ -100,7 +97,7 @@
                             </ul>
                         </div>
                         <div class="footer-copyrights">
-                            <span>&copy; 2015 diw.sk. Všetky práva vyhradené.</span>
+                            <p>&copy; 2015 diw.sk. Všetky práva vyhradené.</p>
                         </div>
                     </footer> {{-- /.footer --}}
 
@@ -115,4 +112,5 @@
 
         </div> {{-- ./perspective --}}
     </body>
+    <script async src="{!! asset('assets/js/app.js') !!}"></script>
 </html>

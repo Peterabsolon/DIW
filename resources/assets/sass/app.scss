@@ -1,12 +1,11 @@
 @import 'vendor/normalize';
 @import 'vendor/breakpoint.scss';
 
-@import 'src/variables';
+@import 'variables';
 
 @import 'src/typography';
 @import 'src/common';
 @import 'src/header';
-@import 'src/content';
 @import 'src/footer';
 
 @import 'src/home';

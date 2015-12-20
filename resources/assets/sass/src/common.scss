@@ -1,6 +1,21 @@
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
 ::selection {
 	background: #b3d4fc;
 	text-shadow: none
+}
+
+::-webkit-scrollbar {
+    display: none
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
 }
 
 .divider {
@@ -12,10 +27,100 @@
 	border-style: solid;
 	border-width: 0 0 30px 100vw;
 	position: relative;
+	opacity: 1;
+	transition: .4s ease all;
 	&.inverse {
 		border-color: transparent #fff;
 		margin-top: 0;
 		margin-bottom: -30px;
+	}
+}
+
+.perspective {
+	width: 100%;
+	height: 100%;
+    perspective: 1700px;
+    position: relative;
+    background: #272727;
+    &.toggled {
+    	overflow: hidden;
+    	.divider {
+    		transition: .4s ease all;
+    		opacity: 0;
+    	}
+    	.canvas {
+    		height: 100vh;
+    		overflow: hidden;
+    	}
+	    .navigation {
+	    	opacity: 1;
+	    	a {
+	    		opacity: 1;
+	    		transform: translateX(0) translateZ(0);
+	    		transition: .2s ease all;
+	    		&:hover {
+	    			color: $color-primary;
+	    		}
+	    	}
+	    }    	
+    }
+}
+
+.perspective-container {
+    min-height: 100%;
+    position: relative;
+    z-index: 3;
+    overflow: hidden;
+}
+
+.navigation {
+	position: absolute;
+	top: 50%;
+	left: 43%;
+	transform: translateY(-50%);
+	transition: .1s easeInOut all;
+	opacity: 0;
+	a {
+		opacity: 0;
+		color: #fff;
+		font-size: 18px;
+		font-weight: 700;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		display: block;
+		line-height: 45px;
+		transform: translateX(40px);
+		transition: transform .35s, opacity .35s;
+		position: relative;
+		text-decoration: none;
+		&:nth-child(1) {
+			transition-delay: .2s;
+		}
+		&:nth-child(2) {
+			transition-delay: .22s;
+		}
+		&:nth-child(3) {
+			transition-delay: .24s;
+		}
+		&:nth-child(4) {
+			transition-delay: .26s;
+		}				
+	}	
+	@include breakpoint(360px) {
+		left: 53%;
+	}
+	@include breakpoint($small) {
+		left: 60%;
+		a {
+			line-height: 55px;
+			font-size: 22px;
+			letter-spacing: 2px;
+		}
+	}
+	@include breakpoint($large) {
+		a {
+			font-size: 24px;
+		}
 	}
 }
 
@@ -27,6 +132,11 @@
 	font-size: 14px;
 	padding: 8px 25px;
 	transition: .15s ease-in all;
+	display: inline-block;
+	@include breakpoint($quadhd) {
+		font-size: 18px;
+		padding: 12px 40px;
+	}
 }
 
 .btn-primary {

@@ -14,6 +14,14 @@
 		top: 45px;
 		right: 30px;
 	}
+	@include breakpoint($medium) {
+		top: 60px;
+		right: 45px;
+	}
+	@include breakpoint($quadhd) {
+		top: 85px;
+		right: 80px;
+	}
 	&.toggled {
 		.bar {
 			&:nth-child(1),
@@ -60,8 +68,19 @@
 		display: block;
 		top: 30px;
 		left: 30px;
+		right: 30px;
+	}
+	@include breakpoint($large) {
+		top: 45px;
+		left: 45px;
+		right: 45px;
+	}
+	@include breakpoint($quadhd) {
+		top: 65px;
+		left: 80px;
 	}
 	.site-logo {
+		display: inline-block;
 		.mobile {
 			margin-top: 20px;
 			@include breakpoint($medium) {

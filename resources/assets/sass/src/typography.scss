@@ -44,3 +44,15 @@ h5,
 h6 {
     line-height: 1.1;
 }
+
+h2.section-title {
+    margin: 0 0 30px;
+    font-size: 30px;
+    color: $color-text;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+    @include breakpoint($medium) {
+        font-size: 48px;
+    }
+}

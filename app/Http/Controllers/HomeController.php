@@ -41,6 +41,6 @@ class HomeController extends Controller
             'social_links'  => $social_links
         );
 
-    	return view('index', $data);
+    	return view('home', $data);
     }
 }

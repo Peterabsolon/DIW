@@ -13,8 +13,279 @@
 		font-weight: bold;
 		text-shadow: 1px 1px 5px rgba(0,0,0,.3);
 		font-size: 32px;
+		margin: 20px 0;
 		@include breakpoint($small) {
 			font-size: 40px;
+		}
+		@include breakpoint($medium) {
+			font-size: 50px
+		}
+		@include breakpoint($large) {
+			font-size: 60px;
+		}
+		@include breakpoint($quadhd) {
+			font-size: 90px;
+		}
+	}
+}
+
+.services {
+	margin-bottom: 50px;
+	@include breakpoint($medium) {
+		margin-bottom: 70px;
+	}
+	.services-list {
+		max-width: 1600px;
+		margin: 0 auto;
+		text-align: center;
+		@include breakpoint($small) {
+			display: flex;
+			flex-wrap: wrap;
+		}
+		li {
+			margin-top: 70px;
+			position: relative;
+			padding: 0 15px 40px;
+			@include breakpoint($small) {
+				width: 50%;
+				padding: 0 0 40px;
+			}
+			@include breakpoint($large) {
+				width: 33.33%;
+			}
+			@include breakpoint($quadhd) {
+				padding: 0 0 60px;
+			}
+			.btn {
+				position: absolute;
+				bottom: 0px;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+		}
+		.service-icon {
+			text-align: center;
+			img {
+				max-width: 80px;
+				@include breakpoint($medium) {
+					max-width: 90px;
+				}
+				@include breakpoint($quadhd) {
+					max-width: 110px;
+				}
+			}
+		}
+		.service-title {
+			font-size: 18px;
+			color: #333;
+			margin: 15px 0 10px;
+			text-transform: uppercase;
+			@include breakpoint($quadhd) {
+				font-size: 24px;
+			}
+		}
+		.service-body {
+			@include breakpoint($small) {
+				padding: 0 25px;
+				max-width: 400px;
+				margin: 0 auto;
+			}
+			p {
+				color: $color-text;
+				margin-bottom: 20px;
+				font-size: 16px;
+				@include breakpoint($medium) {
+					font-size: 14px;
+				}
+				@include breakpoint($quadhd) {
+					font-size: 18px;
+				}
+			}
+		}
+	}	
+}
+
+.clients {
+	margin-bottom: 30px;
+	@include breakpoint($small) {
+		margin-bottom: 50px;
+	}
+	.clients-list {
+		display: flex;
+		flex-wrap: wrap;
+		li {
+			width: 50%;
+			@include breakpoint($small) {
+				width: 33.33%;
+			}
+			@include breakpoint($large) {
+				width: 16.66%;
+			}
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+			@include breakpoint($medium) {
+				display: block;
+				max-width: 65%;
+				margin: 0 auto;
+			}
+			@include breakpoint($large) {
+				max-width: 100%;
+			}
+			@include breakpoint(1600px) {
+				max-width: 85%;
+			}
+			@include breakpoint(1800px) {
+				max-width: 70%;
+			}
+		}
+	}	
+}
+
+.photos {
+	.photos-list {
+		display: flex;
+		flex-flow: row wrap;
+		li {
+			width: 50%;
+			display: none;
+			margin: 0;
+			padding: 0;
+			&:nth-child(1),
+			&:nth-child(2),
+			&:nth-child(3),
+			&:nth-child(4) {
+				display: block;
+			}
+			@include breakpoint($small) {
+				width: 33.33%;
+				&:nth-child(5),
+				&:nth-child(6) {
+					display: block;
+				}
+			}
+			@include breakpoint($medium) {
+				width: 20%;
+				display: block;
+			}
+			@include breakpoint($large) {
+				width: 10%;
+			}
+		}
+		img {
+			display: block;
+			max-width: 100%;
+			height: auto;
+		}
+	}
+}
+
+.social-buttons {
+	.social-buttons-list {
+		display: flex;
+		li {
+			text-align: center;
+			width: 20%;
+			height: 64px;
+			@include breakpoint($large) {
+				height: 80px;
+			}
+			@include breakpoint($xlarge) {
+				height: 100px;
+			}			
+			.icon {
+				background-image: url('/images/site/social-buttons.png');
+				background-size: auto 30px;
+				width: 30px;
+				height: 30px;
+				@include breakpoint($large) {
+					background-size: auto 40px;
+					width: 40px;
+					height: 40px;
+				}
+			}			
+			a {
+				display: inline-block;
+				display: flex;
+				align-items: center;
+				justify-content: center;	
+				height: 100%;		
+				transition: .2s ease-in-out all;
+				&.logo-facebook {
+				    background: #3B5998;
+				    @include breakpoint($large) {
+				    	background: #333;
+				    	&:hover {
+				    		background: #3B5998;
+				    	}
+				    }
+				}
+				&.logo-twitter {
+				    background: #55acee;
+				    @include breakpoint($large) {
+				    	background: #333;
+				    	&:hover {
+				    		background: #55acee;
+				    	}
+				    }
+				    .icon {
+				    	background-position: -30px 0;
+				    	@include breakpoint($large) {
+				    		background-position: -40px 0;
+				    	}
+				    }
+				}
+				&.logo-youtube {
+				    background: #cd201f;
+				    @include breakpoint($large) {
+				    	background: #333;
+				    	&:hover {
+				    		background: #cd201f;
+				    	}
+				    }
+				    .icon {
+				    	background-position: -60px 0;
+				    	@include breakpoint($large) {
+				    		background-position: -80px 0;
+				    	}
+				    }				    
+				}
+				&.logo-linkedin {
+				    background: #0077b5;
+				    @include breakpoint($large) {
+				    	background: #333;
+				    	&:hover {
+				    		background: #0077b5;
+				    	}
+				    }
+				    .icon {
+				    	background-position: -90px 0;
+				    	@include breakpoint($large) {
+				    		background-position: -120px 0;
+				    	}
+				    }				    
+				}
+				&.logo-instagram {
+				    background: #3f729b;
+				    @include breakpoint($large) {
+				    	background: #333;
+				    	&:hover {
+				    		background: #3f729b;
+				    	}
+				    }
+				    .icon {
+				    	background-position: -120px 0;
+				    	@include breakpoint($large) {
+				    		background-position: -160px 0;
+				    	}
+				    }				    
+				}									
+			}
+			span {
+				text-indent: -9999px;
+				display: inline-block;
+			}		
 		}
 	}
 }
