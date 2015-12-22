@@ -21,6 +21,13 @@
 		{!! Form::text('slug', null, ['class' => 'form-control']) !!}
 		{!! $errors->first('slug', '<div class="text-danger">:message</div>') !!}
 	</div>
+	@if( isOnPages())
+	<div class="form-group">
+		{!! Form::label('services', 'Services (separate by comma):') !!}
+		{!! Form::text('services', null, ['class' => 'form-control']) !!}
+		{!! $errors->first('services', '<div class="text-danger">:message</div>') !!}		
+	</div>
+	@endif
 	@if(! isOnPages())
 	<div class="form-group">
 		{!! Form::label('category_id', 'Category:') !!}

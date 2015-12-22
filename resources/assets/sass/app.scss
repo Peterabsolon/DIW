@@ -1,5 +1,6 @@
 @import 'vendor/normalize';
 @import 'vendor/breakpoint.scss';
+@import 'vendor/slick.scss';
 
 @import 'variables';
 
@@ -9,3 +10,4 @@
 @import 'src/footer';
 
 @import 'src/home';
+@import 'src/portfolio';

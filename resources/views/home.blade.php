@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js page-index">
+<html class="page-index">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -31,7 +31,6 @@
                             <img src="{!! asset('images/site/site-logo@mobile.svg') !!}" alt="DIW" class="mobile">
                         </a>
                     </header> {{-- /.header --}}
-
 
                     <section class="hero">
                         <div class="hero-content">

@@ -30,5 +30,11 @@ elixir(function(mix) {
 		.scripts([
 			'velocity.min.js',
 			'app.js'
-		], 'public/assets/js/app.js');
+		], 'public/assets/js/app.js')
+
+		// jQuery portfolio scripts
+		.scripts([
+			'slick.min.js',
+			'portfolio.js'
+		], 'public/assets/js/portfolio.js');
 });
