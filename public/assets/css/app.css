@@ -681,7 +681,6 @@ html {
   opacity: 1;
   -webkit-transform: translateX(0) translateZ(0);
   transform: translateX(0) translateZ(0);
-  transition: .2s ease all;
 }
 
 .perspective.toggled .navigation a:hover {

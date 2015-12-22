@@ -57,7 +57,6 @@ body, html {
 	    	a {
 	    		opacity: 1;
 	    		transform: translateX(0) translateZ(0);
-	    		transition: .2s ease all;
 	    		&:hover {
 	    			color: $color-primary;
 	    		}

@@ -57,6 +57,7 @@
 		{!! Form::label('', 'Background image:') !!}
 		{!! Form::file('image', ['class' => 'input-file', 'id' => 'image']) !!}
 		<label for="image" class="btn btn-primary btn-upload btn-maxwidth"><i class="fa fa-upload"></i> <span>Choose a file</span></label>
+		<button type="button" class="btn btn-primary btn-icon btn-position"><i class="fa fa-arrows"></i> <span>Set position</span></button>
 		{!! $errors->first('image', '<div class="text-danger">:message</div>') !!}
 	</div>
 	@if(isset($model))
@@ -270,6 +271,8 @@
 
 		document.getElementById("btn-add-logo").onclick = addInputLogo;
 		document.getElementById("btn-add-image").onclick = addInputImage;
+
+
 	</script>
 	@endif
 @stop

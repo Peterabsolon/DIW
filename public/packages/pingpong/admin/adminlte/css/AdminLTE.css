@@ -3545,6 +3545,10 @@ fieldset[disabled] .btn-vk.active {
   margin-right: 5px;
 }
 
+label.btn .fa {
+  margin-right: 5px;
+}
+
 .well-logos .panel-body,
 .well-images .panel-body {
   position: relative;
@@ -3572,6 +3576,16 @@ fieldset[disabled] .btn-vk.active {
 .btn-maxwidth {
   max-width: 300px;
   display: block;
+}
+
+.btn-icon .fa {
+  margin-right: 5px;
+}
+
+.btn-position {
+  width: 100%;
+  max-width: 300px;
+  margin-top: 5px;
 }
 
 .well-logos,
