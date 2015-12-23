@@ -23,3 +23,6 @@
 
 <!-- Bootstrap slider -->
 <script src="{!! admin_asset('js/bootstrap-slider.min.js') !!}" type="text/javascript"></script>
+
+<!-- Interact.js -->
+<script src="{!! admin_asset('js/interact.min.js') !!}" type="text/javascript"></script>

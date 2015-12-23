@@ -25,6 +25,7 @@ class CreateArticlesTable extends Migration
             $table->integer('sort_order')->nullable();
             $table->string('color', 8)->nullable();
             $table->string('image')->nullable(); // default image
+            $table->integer('position')->default(0);
             $table->string('background_small')->nullable();
             $table->string('background_small_2x')->nullable();
             $table->string('background_medium')->nullable();

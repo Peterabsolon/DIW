@@ -3614,3 +3614,26 @@ label.btn .fa {
   vertical-align: top;
   margin-top: 10px;
 }
+
+#modal-position {
+  text-align: center;
+}
+
+#modal-position .modal-header {
+  text-align: left;
+}
+
+#modal-position .modal-dialog {
+  width: auto;
+  display: inline-block;
+}
+
+#modal-position .preview {
+  background-size: cover;
+}
+
+#modal-position .cutout {
+  width: 480px;
+  height: 640px;
+  border: 2px solid #3C8DBC;
+}
