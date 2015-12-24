@@ -20,9 +20,17 @@ class PortfolioController extends Controller
         $projects = Article::where('type', 'page')->orderBy('sort_order')->get();
 
         foreach($projects as $project) {
-            $services = implode('<span class="separator"></span>', explode(',', $project->services));
+            $services = explode(',', $project->services);
 
-            $project->services = $services;
+            $services_list = '<ul>';
+            
+            foreach($services as $service) {
+                $services_list .= '<li>' . $service . '</li>';
+            }
+
+            $services_list .= '</ul>';
+
+            $project->services = $services_list;
         }
 
         $email  = Option::where('key', 'contact.email')->first()->value;

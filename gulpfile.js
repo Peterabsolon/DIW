@@ -16,7 +16,6 @@ elixir.config.sourcemaps = false;
 elixir(function(mix) {
 	mix
 		.browserSync({
-			online: false,
 			proxy : 'localhost:8000',
 			files : [
 				{
@@ -28,13 +27,12 @@ elixir(function(mix) {
 		.sass('app.scss', 'public/assets/css/app.css')
 
 		.scripts([
-			'velocity.min.js',
 			'app.js'
 		], 'public/assets/js/app.js')
 
-		// jQuery portfolio scripts
 		.scripts([
+			'jquery.min.js',
 			'slick.min.js',
-			'portfolio.js'
-		], 'public/assets/js/portfolio.js');
+			'velocity.min.js',
+		], 'public/assets/js/libs.js');
 });

@@ -20,9 +20,3 @@
 <!-- AdminLTE App -->
 <script src="{!! admin_asset('adminlte/js/AdminLTE/app.js') !!}" type="text/javascript"></script>
 <script src="{!! admin_asset('js/all.js') !!}" type="text/javascript"></script>
-
-<!-- Bootstrap slider -->
-<script src="{!! admin_asset('js/bootstrap-slider.min.js') !!}" type="text/javascript"></script>
-
-<!-- Interact.js -->
-<script src="{!! admin_asset('js/interact.min.js') !!}" type="text/javascript"></script>

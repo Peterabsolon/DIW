@@ -78,11 +78,11 @@
 
                     <section class="social-buttons">
                         <ul class="social-buttons-list">
-                            <li><a class="logo-facebook" href="{{ $social_links['facebook'] }}"><span class="icon"></span></a></li>
-                            <li><a class="logo-twitter" href="{{ $social_links['twitter'] }}"><span class="icon"></span></a></li>
-                            <li><a class="logo-youtube" href="{{ $social_links['youtube'] }}"><span class="icon"></span></a></li>
-                            <li><a class="logo-linkedin" href="{{ $social_links['linkedin'] }}"><span class="icon"></span></a></li>
-                            <li><a class="logo-instagram" href="{{ $social_links['instagram'] }}"><span class="icon"></span></a></li>
+                            <li><a class="logo-facebook" href="{{ $social_links['facebook'] }}"><i class="fa fa-facebook"></i></a></li>
+                            <li><a class="logo-twitter" href="{{ $social_links['twitter'] }}"><i class="fa fa-twitter"></i></a></li>
+                            <li><a class="logo-youtube" href="{{ $social_links['youtube'] }}"><i class="fa fa-youtube"></i></a></li>
+                            <li><a class="logo-linkedin" href="{{ $social_links['linkedin'] }}"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a class="logo-instagram" href="{{ $social_links['instagram'] }}"><i class="fa fa-instagram"></i></a></li>
                         </ul>
                     </section> {{-- /.social-buttons --}}
 
@@ -104,12 +104,15 @@
             </div> {{-- /.perspective-container --}}
 
             <nav class="navigation">
-                <a href="{{ route('home') }}">Domov</a>
-                <a href="{{ route('portfolio') }}">Portfólio</a>
-                <a href="{{ route('contact') }}">Kontakt</a>
+                <span><a href="{{ route('home') }}">Domov</a></span>
+                <span><a href="{{ route('portfolio') }}">Portfólio</a></span>
+                <span><a href="{{ route('contact') }}">Kontakt</a></span>
             </nav> {{-- ./navigation --}}
 
         </div> {{-- ./perspective --}}
     </body>
-    <script async src="{!! asset('assets/js/app.js') !!}"></script>
+
+    <!-- <script src="//code.jquery.com/jquery-1.11.3.min.js"></script> -->
+    <script src="{!! asset('assets/js/libs.js') !!}"></script>
+    <script src="{!! asset('assets/js/app.js') !!}"></script>
 </html>

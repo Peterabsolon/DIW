@@ -9,6 +9,6 @@ $(document).ready(function() {
 		arrows: false,
 		lazyLoad: 'ondemand'
 	});
-
+ 
 	$('.slick-current').trigger('click');
 });

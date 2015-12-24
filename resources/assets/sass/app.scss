@@ -1,13 +1,14 @@
 @import 'vendor/normalize';
 @import 'vendor/breakpoint.scss';
 @import 'vendor/slick.scss';
+@import 'vendor/font_awesome/font-awesome.scss';
 
 @import 'variables';
 
 @import 'src/typography';
 @import 'src/common';
 @import 'src/header';
-@import 'src/footer';
+@import 'src/footer'; 
 
 @import 'src/home';
 @import 'src/portfolio';

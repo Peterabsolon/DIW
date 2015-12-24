@@ -30,8 +30,7 @@ class CreateArticlesTable extends Migration
             $table->string('background_small_2x')->nullable();
             $table->string('background_medium')->nullable();
             $table->string('background_medium_2x')->nullable();
-            $table->string('background_large')->nullable();
-            $table->string('background_large_2x')->nullable();                        
+            $table->string('background_large')->nullable();                    
             $table->string('image_left')->nullable();
             $table->string('image_right')->nullable();
             $table->string('published_at')->nullable();

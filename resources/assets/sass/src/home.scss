@@ -193,18 +193,7 @@
 			}
 			@include breakpoint($xlarge) {
 				height: 100px;
-			}			
-			.icon {
-				background-image: url('/images/site/social-buttons.png');
-				background-size: auto 30px;
-				width: 30px;
-				height: 30px;
-				@include breakpoint($large) {
-					background-size: auto 40px;
-					width: 40px;
-					height: 40px;
-				}
-			}			
+			}					
 			a {
 				display: inline-block;
 				display: flex;
@@ -212,6 +201,7 @@
 				justify-content: center;	
 				height: 100%;		
 				transition: .2s ease-in-out all;
+				text-decoration: none;
 				&.logo-facebook {
 				    background: #3B5998;
 				    @include breakpoint($large) {
@@ -229,12 +219,6 @@
 				    		background: #55acee;
 				    	}
 				    }
-				    .icon {
-				    	background-position: -30px 0;
-				    	@include breakpoint($large) {
-				    		background-position: -40px 0;
-				    	}
-				    }
 				}
 				&.logo-youtube {
 				    background: #cd201f;
@@ -244,12 +228,6 @@
 				    		background: #cd201f;
 				    	}
 				    }
-				    .icon {
-				    	background-position: -60px 0;
-				    	@include breakpoint($large) {
-				    		background-position: -80px 0;
-				    	}
-				    }				    
 				}
 				&.logo-linkedin {
 				    background: #0077b5;
@@ -259,12 +237,6 @@
 				    		background: #0077b5;
 				    	}
 				    }
-				    .icon {
-				    	background-position: -90px 0;
-				    	@include breakpoint($large) {
-				    		background-position: -120px 0;
-				    	}
-				    }				    
 				}
 				&.logo-instagram {
 				    background: #3f729b;
@@ -274,13 +246,17 @@
 				    		background: #3f729b;
 				    	}
 				    }
-				    .icon {
-				    	background-position: -120px 0;
-				    	@include breakpoint($large) {
-				    		background-position: -160px 0;
-				    	}
-				    }				    
-				}									
+				}		
+				.fa {
+					font-size: 22px;
+					color: #fff;
+					@include breakpoint($large) {
+						font-size: 28px;
+					}
+					@include breakpoint($xlarge) {
+						font-size: 35px;
+					}	
+				}							
 			}
 			span {
 				text-indent: -9999px;

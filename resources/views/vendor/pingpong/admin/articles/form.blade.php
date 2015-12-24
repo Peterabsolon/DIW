@@ -65,7 +65,6 @@
 		@if($model->image)
 			<div class="img-thumbnail">
 				<img class="img-responsive" style="max-width: 290px !important;" src="{!! asset('images/articles/' . $model->image) !!}">
-				<button type="button" class="btn btn-primary btn-icon btn-position"><i class="fa fa-arrows"></i> <span>Set position on mobile</span></button>
 			</div>
 		@endif
 	</div>
@@ -162,33 +161,6 @@
 		{!! Form::submit(isset($model) ? 'Update' : 'Save', ['class' => 'btn btn-primary']) !!}
 	</div>
 {!! Form::close() !!}
-
-{{-- Background image position modal --}}
-<div class="modal fade" tabindex="-1" role="dialog" id="modal-position">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Background image position</h4>
-      </div>
-      <div class="modal-body">
-        <div class="slider"></div>
-        <div class="preview-container">
-        	<div class="img-thumbnail">
-        		<div class="preview">
-        			<div class="draggable cutout">
-        			</div>
-        		</div>
-        	</div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
 
 @section('script')
 	
@@ -299,52 +271,6 @@
 
 		document.getElementById("btn-add-logo").onclick = addInputLogo;
 		document.getElementById("btn-add-image").onclick = addInputImage;
-
-		$('.btn-position').on('click', function(){
-			var image 			= $(this).parent().find('img'),
-				image_width		= image.width(),
-				image_height 	= image.height(),
-				aspect_ratio 	= image_width / image_height;
-
-			var preview_width 	= 640 * aspect_ratio;
-
-			console.log(preview_width); 
-
-			$('#modal-position .preview').css({
-				'background-image'	: 'url(' + image.attr('src') + ')',
-				'height'			: '640px',
-				'width'				: 640 * aspect_ratio + 'px'
-			});
-
-			$('#modal-position').modal('show');
-		});
-
-		interact('.draggable')
-		  .draggable({
-		    restrict: {
-		      restriction: "parent",
-		      endOnly: true,
-		      elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
-		    },
-		    axis: 'x',
-		    autoScroll: true,
-		    onmove: dragMoveListener
-		  });
-
-		  function dragMoveListener (event) {
-		    var target = event.target,
-		        x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
-		        y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
-
-		    target.style.webkitTransform =
-		    target.style.transform =
-		      'translate(' + x + 'px, ' + y + 'px)';
-
-		    target.setAttribute('data-x', x);
-		    target.setAttribute('data-y', y);
-
-		    $('input[name=\'position\']').val(parseInt(x));
-		  }	
 	</script>
 	@endif
 @stop

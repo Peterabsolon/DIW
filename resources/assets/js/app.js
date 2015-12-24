@@ -1,58 +1,47 @@
-(function () {
-	function hasClass(element, cls) {
-	    return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
-	}
+$(document).ready(function(){
+	$('.btn-toggle-menu').on('click', function(){
+		$(this).toggleClass('toggled');
 
-	var btnToggleMenu 			= document.querySelector('.btn-toggle-menu'),
-		perspectiveContainer	= document.querySelector('.perspective-container'),
-		perspective 			= document.querySelector('.perspective');
-
-	btnToggleMenu.addEventListener('click', function () {
-		btnToggleMenu.classList.toggle('toggled');
- 		
-		if (!hasClass(perspective, 'toggled')) {
-			Velocity(
-				perspectiveContainer, 
-				{ 
-		            translateX: "-35%",
-		            rotateY: "45deg",
-		            translateZ: "-70px"					
-				}, 
-				{ duration: 400 }, 
-				"easeOutCubic"
-			);
+		if (!$('.perspective').hasClass('toggled')) {
+			$('.perspective-container').velocity({
+				translateX: "-35%",
+				rotateY: "45deg",
+				translateZ: "-70px"	
+			}, 400, 'easeOutCubic');
 		} else {
-			Velocity(
-				perspectiveContainer, 
-				{ 
-		            translateX: "0%",
-		            rotateY: "0deg",
-		            translateZ: "0px"					
-				}, 
-				{ duration: 400 }, 
-				"easeOutCubic"
-			);
+			$('.perspective-container').velocity({
+				translateX: "0%",
+				rotateY: "0deg",
+				translateZ: "0px"	
+			}, 400, 'easeOutCubic');
 		}
 
-		perspective.classList.toggle('toggled');
+		$('.perspective').toggleClass('toggled');
 	});
 
-	perspectiveContainer.addEventListener('click', function () {
-		if (hasClass(perspective, 'toggled')) {
-			btnToggleMenu.className = 'btn-toggle-menu';
+	$('.perspective-container').on('click', function(){
+		if($('.perspective').hasClass('toggled')) {
+			$('.btn-toggle-menu').removeClass('toggled');
 
-			Velocity(
-				perspectiveContainer, 
-				{ 
-		            translateX: "0%",
-		            rotateY: "0deg",
-		            translateZ: "0px"					
-				}, 
-				{ duration: 400 }, 
-				"easeOutCubic"
-			);			
+			$('.perspective').removeClass('toggled');
 
-			perspective.className = 'perspective';
+			$('.perspective-container').velocity({
+				translateX: "0%",
+				rotateY: "0deg",
+				translateZ: "0px"	
+			}, 400, 'easeOutCubic');
 		}
-	})
-})();
+	});
+
+	$('.projects .slider').slick({
+		cssEase: 'easeInOut',
+		speed: 150,
+		focusOnSelect: true,
+		infinite: false,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		dots: false,
+		accessibility: false
+	});	
+});

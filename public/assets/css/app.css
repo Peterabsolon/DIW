@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 
 /**
@@ -541,6 +543,55 @@ th {
   display: none;
 }
 
+/*!
+ *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+
+/* FONT PATH
+ * -------------------------- */
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("../fonts/font_awesome/fontawesome-webfont.eot?v=4.5.0");
+  src: url("../fonts/font_awesome/fontawesome-webfont.eot?#iefix&v=4.5.0") format("embedded-opentype"), url("../fonts/font_awesome/fontawesome-webfont.woff2?v=4.5.0") format("woff2"), url("../fonts/font_awesome/fontawesome-webfont.woff?v=4.5.0") format("woff"), url("../fonts/font_awesome/fontawesome-webfont.ttf?v=4.5.0") format("truetype"), url("../fonts/font_awesome/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px / 1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
+   readers do not read off random characters that represent icons */
+
+.fa-twitter:before {
+  content: "";
+}
+
+.fa-facebook-f:before,
+.fa-facebook:before {
+  content: "";
+}
+
+.fa-linkedin:before {
+  content: "";
+}
+
+.fa-youtube:before {
+  content: "";
+}
+
+.fa-instagram:before {
+  content: "";
+}
+
 @font-face {
   font-family: Montserrat;
   src: url(/assets/fonts/montserrat/montserrat-light-webfont.eot);
@@ -677,14 +728,10 @@ html {
   opacity: 1;
 }
 
-.perspective.toggled .navigation a {
+.perspective.toggled .navigation span {
   opacity: 1;
   -webkit-transform: translateX(0) translateZ(0);
   transform: translateX(0) translateZ(0);
-}
-
-.perspective.toggled .navigation a:hover {
-  color: #30aee3;
 }
 
 .perspective-container {
@@ -704,37 +751,45 @@ html {
   opacity: 0;
 }
 
-.navigation a {
+.navigation span {
   opacity: 0;
+  -webkit-transform: translateX(40px);
+  transform: translateX(40px);
+  transition: -webkit-transform .35s, opacity .35s;
+  transition: transform .35s, opacity .35s;
+  display: block;
+}
+
+.navigation span:nth-child(1) {
+  transition-delay: .2s;
+}
+
+.navigation span:nth-child(2) {
+  transition-delay: .22s;
+}
+
+.navigation span:nth-child(3) {
+  transition-delay: .24s;
+}
+
+.navigation span:nth-child(4) {
+  transition-delay: .26s;
+}
+
+.navigation a {
   color: #fff;
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
-  display: block;
   line-height: 45px;
-  -webkit-transform: translateX(40px);
-  transform: translateX(40px);
-  transition: -webkit-transform .35s, opacity .35s;
-  transition: transform .35s, opacity .35s;
+  transition: color .15s;
   position: relative;
   text-decoration: none;
 }
 
-.navigation a:nth-child(1) {
-  transition-delay: .2s;
-}
-
-.navigation a:nth-child(2) {
-  transition-delay: .22s;
-}
-
-.navigation a:nth-child(3) {
-  transition-delay: .24s;
-}
-
-.navigation a:nth-child(4) {
-  transition-delay: .26s;
+.navigation a:hover {
+  color: #30aee3;
 }
 
 @media (min-width: 360px) {
@@ -1374,21 +1429,6 @@ html {
   }
 }
 
-.social-buttons .social-buttons-list li .icon {
-  background-image: url("/images/site/social-buttons.png");
-  background-size: auto 30px;
-  width: 30px;
-  height: 30px;
-}
-
-@media (min-width: 1200px) {
-  .social-buttons .social-buttons-list li .icon {
-    background-size: auto 40px;
-    width: 40px;
-    height: 40px;
-  }
-}
-
 .social-buttons .social-buttons-list li a {
   display: inline-block;
   display: -webkit-flex;
@@ -1402,6 +1442,7 @@ html {
   justify-content: center;
   height: 100%;
   transition: .2s ease-in-out all;
+  text-decoration: none;
 }
 
 .social-buttons .social-buttons-list li a.logo-facebook {
@@ -1432,16 +1473,6 @@ html {
   }
 }
 
-.social-buttons .social-buttons-list li a.logo-twitter .icon {
-  background-position: -30px 0;
-}
-
-@media (min-width: 1200px) {
-  .social-buttons .social-buttons-list li a.logo-twitter .icon {
-    background-position: -40px 0;
-  }
-}
-
 .social-buttons .social-buttons-list li a.logo-youtube {
   background: #cd201f;
 }
@@ -1453,16 +1484,6 @@ html {
 
   .social-buttons .social-buttons-list li a.logo-youtube:hover {
     background: #cd201f;
-  }
-}
-
-.social-buttons .social-buttons-list li a.logo-youtube .icon {
-  background-position: -60px 0;
-}
-
-@media (min-width: 1200px) {
-  .social-buttons .social-buttons-list li a.logo-youtube .icon {
-    background-position: -80px 0;
   }
 }
 
@@ -1480,16 +1501,6 @@ html {
   }
 }
 
-.social-buttons .social-buttons-list li a.logo-linkedin .icon {
-  background-position: -90px 0;
-}
-
-@media (min-width: 1200px) {
-  .social-buttons .social-buttons-list li a.logo-linkedin .icon {
-    background-position: -120px 0;
-  }
-}
-
 .social-buttons .social-buttons-list li a.logo-instagram {
   background: #3f729b;
 }
@@ -1504,13 +1515,20 @@ html {
   }
 }
 
-.social-buttons .social-buttons-list li a.logo-instagram .icon {
-  background-position: -120px 0;
+.social-buttons .social-buttons-list li a .fa {
+  font-size: 22px;
+  color: #fff;
 }
 
 @media (min-width: 1200px) {
-  .social-buttons .social-buttons-list li a.logo-instagram .icon {
-    background-position: -160px 0;
+  .social-buttons .social-buttons-list li a .fa {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .social-buttons .social-buttons-list li a .fa {
+    font-size: 35px;
   }
 }
 
@@ -1530,4 +1548,18 @@ html {
   display: flex;
   width: 100%;
   height: 100vh;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.projects .project-header .project-title {
+  color: #fff;
+  font-size: 34px;
+  text-transform: uppercase;
+  font-weight: 700;
 }
