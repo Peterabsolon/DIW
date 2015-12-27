@@ -3,8 +3,8 @@
 @section('content-header')
 	<h1>
 		All Clients ({!! $clients->count() !!})
-		&middot;
-		<small>{!! link_to_route('admin.clients.create', 'Add New') !!}</small>
+{{-- 		&middot;
+		<small>{!! link_to_route('admin.clients.create', 'Add New') !!}</small> --}}
 	</h1>
 @stop
 
@@ -27,8 +27,8 @@
 				<td>{!! $client->created_at !!}</td>
 				<td class="text-center">
 					<a href="{!! route('admin.clients.edit', $client->id) !!}">Edit</a>
-					&middot;
-					@include('admin::partials.modal', ['data' => $client, 'name' => 'clients'])
+{{-- 					&middot;
+					@include('admin::partials.modal', ['data' => $client, 'name' => 'clients']) --}}
 				</td>
 			</tr>
 			<?php $no++ ;?>

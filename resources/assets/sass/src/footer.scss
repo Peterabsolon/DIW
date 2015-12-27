@@ -7,6 +7,9 @@
 	@include breakpoint($large) {
 		padding: 20px 30px;
 	}
+	&.hidden {
+		display: none;
+	}
 	.footer-contacts,
 	.footer-copyrights {
 		width: 100%;
@@ -80,11 +83,5 @@
 			text-decoration: none;
 			font-weight: bold;
 		}
-	}
-}
-
-.page-portfolio {
-	.footer {
-		display: none;
 	}
 }

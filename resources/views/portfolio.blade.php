@@ -15,9 +15,9 @@
 
         {{-- Generate CSS for project backgrounds --}}
         <style>
-            /* use the ol' php foreach loop to prevent blade template conflict */
+            /* use the ol' php foreach loop to prevent blade template syntax conflict with CSS */
             <?php foreach($projects as $key => $project) { ?>
-                .slide-<?php echo $key; ?>.loaded {
+                .slide-<?php echo $key; ?>.loaded .project-header {
                     background-image: url('images/articles/<?php echo $project->background_small; ?>');
                 }
 
@@ -25,13 +25,13 @@
                 only screen and (min-resolution: 144dpi),
                 (-webkit-min-device-pixel-ratio: 144),
                 (min-resolution: 144dppx) {
-                    .slide-<?php echo $key; ?>.loaded {
+                    .slide-<?php echo $key; ?>.loaded .project-header {
                         background-image: url('images/articles/<?php echo $project->background_small_2x; ?>');
                     }
                 }
 
                 @media only screen and (min-width: 768px) {
-                    .slide-<?php echo $key; ?>.loaded {
+                    .slide-<?php echo $key; ?>.loaded .project-header {
                         background-image: url('images/articles/<?php echo $project->background_medium; ?>');
                     }                    
                 }
@@ -40,13 +40,13 @@
                 only screen and (min-resolution: 144dpi) and (min-width: 768px),
                 (-webkit-min-device-pixel-ratio: 144) and (min-width: 768px),
                 (min-resolution: 144dppx) and (min-width: 768px) {
-                    .slide-<?php echo $key; ?>.loaded {
+                    .slide-<?php echo $key; ?>.loaded .project-header {
                         background-image: url('images/articles/<?php echo $project->background_medium_2x; ?>');
                     }
                 }            
 
                 @media only screen and (min-width: 992px) {
-                    .slide-<?php echo $key; ?>.loaded {
+                    .slide-<?php echo $key; ?>.loaded .project-header {
                         background-image: url('images/articles/<?php echo $project->background_large; ?>');
                     }                    
                 }
@@ -83,35 +83,89 @@
                                 <div class="project-header">
                                     <div class="project-header-content">
                                         <h2 class="project-title">{{ $project->title }}</h2>
-                                        <h3 class="project-services">{!! $project->services !!}</h3>                                        
+                                        <h3 class="project-services">{!! $project->services !!}</h3>
                                     </div>
                                 </div>
                                 <div class="project-body">
-                                    <div class="intro">
-                                        <button type="button" ca></button>
+                                    <button type="button" class="btn-project-hide"><i class="fa fa-angle-double-up"></i></button>
+                                    <div class="intro" style="background-color: #{{ $project->color }}">
+                                        <h3 class="project-title">{{ $project->title }}</h3>
+                                        <div class="project-description">{!! $project->body !!}</div>
                                     </div>
+                                    <div class="divider inverse" style="border-color: transparent #{{ $project->color }}"></div>
+                                    <div class="gallery-header">
+                                        @if($project_key < 2)
+                                        <div class="image-container">
+                                            <img src="images/articles/{{ $project->image_left }}" alt="{{ $project->title }}" class="project-image-left">
+                                        </div>
+                                        <div class="image-container">
+                                            <img src="images/articles/{{ $project->image_right }}" alt="{{ $project->title }}" class="project-image-right">
+                                        </div>
+                                        @else
+                                        <div class="image-container">
+                                            <img src="" data-src="images/articles/{{ $project->image_left }}" alt="{{ $project->title }}" class="project-image-left">
+                                        </div>
+                                        <div class="image-container">
+                                            <img src="" data-src="images/articles/{{ $project->image_right }}" alt="{{ $project->title }}" class="project-image-right">
+                                        </div>                                        
+                                        @endif
+                                    </div>
+                                    <?php $logos_count = count($project->logos); ?>
+                                    @if($logos_count > 0)
+                                    <div class="gallery-logos logos-count-{{ $logos_count }}">
+                                        @foreach($project->logos as $logo)
+                                        <div class="image-container">
+                                            @if($project_key < 2)
+                                            <img src="images/articles/{{ $logo->image }}" class="project-logo">
+                                            @else
+                                            <img src="" data-src="images/articles/{{ $logo->image }}" class="project-logo">
+                                            @endif
+                                        </div>
+                                        @endforeach
+                                    </div>
+                                    @endif
+                                    <?php $images_count = count($project->images); ?>
+                                    @if($images_count > 0)
+                                    <div class="gallery-images">
+                                        @foreach($project->images as $image)
+                                        <div class="image-container">
+                                            @if($project_key < 2)
+                                            <img src="images/articles/{{ $image->image }}" class="project-image">
+                                            @else
+                                            <img src="" data-src="images/articles/{{ $image->image }}" class="project-image">
+                                            @endif
+                                        </div>
+                                        @endforeach
+                                    </div>
+                                    @endif
+                                    <button type="button" class="btn-scroll-top"><i class="fa fa-angle-double-up"></i></button>
+                                    <div class="project-contact">
+                                        <h4 class="contact-title">Máte záujem o spoluprácu?</h4>
+                                        <a href="{{ route('contact') }}" class="btn btn-primary btn-contact-us">Napíšte nám</a>
+                                    </div>
+                                    <footer class="footer">
+                                        <div class="footer-contacts">
+                                            <h3 class="footer-title">Kontakt</h3>
+                                            <ul class="footer-contacts-list">
+                                                <li><a href="mailto:{{ $email }}">{{ $email }}</a></li>
+                                                <li><a href="tel:{{ $phone }}">{{ $phone }}</a></li>
+                                                <li><a href="{{ route('home') }}">www.diw.sk</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="footer-copyrights">
+                                            <p>&copy; 2015 diw.sk. Všetky práva vyhradené.</p>
+                                        </div>
+                                    </footer> {{-- /.footer --}}                                    
                                 </div>
                             </li>
                             @endforeach
                         </ul>   
                         <div class="slider-controls">
-
+                            <button type="button" class="btn-project-prev disabled"><i class="fa fa-angle-double-left"></i></button>
+                            <button type="button" class="btn-project-show"><i class="fa fa-search"></i> Detail</button>
+                            <button type="button" class="btn-project-next"><i class="fa fa-angle-double-right"></i></button>
                         </div>
                     </section>
-
-                    <footer class="footer">
-                        <div class="footer-contacts">
-                            <h3 class="footer-title">Kontakt</h3>
-                            <ul class="footer-contacts-list">
-                                <li><a href="mailto:{{ $email }}">{{ $email }}</a></li>
-                                <li><a href="tel:{{ $phone }}">{{ $phone }}</a></li>
-                                <li><a href="{{ route('home') }}">www.diw.sk</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-copyrights">
-                            <p>&copy; 2015 diw.sk. Všetky práva vyhradené.</p>
-                        </div>
-                    </footer> {{-- /.footer --}}
 
                 </div> {{-- /.canvas --}}
             </div> {{-- /.perspective-container --}}

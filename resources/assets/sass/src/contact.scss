@@ -1,0 +1,157 @@
+.page-contact {
+	.site-logo {
+		.svg path {
+			fill: #000;
+		}
+	}
+	.canvas {
+		background: #fff;
+	}
+	.section-title {
+		padding-top: 120px;
+	}
+}
+
+.contact-text {
+	padding: 0 15px;
+	text-align: center;
+	color: $color-text;
+	@include breakpoint($small) {
+		padding: 0 30px;
+	}
+	a {
+		color: $color-text;
+		text-decoration: none;
+		transition: .1s ease-in all;
+		&:hover {
+			color: $color-primary;
+		}
+	}
+	br {
+		// display: none;
+		// @include breakpoint(360px) {
+		// 	display: inline;
+		// }
+	}
+}
+
+.contact-data {
+	text-align: center;
+	margin-bottom: 20px;
+	@include breakpoint($small) {
+		display: flex;
+		margin: 50px auto;
+		width: 600px;
+	}
+	a {
+		margin: 10px 0;
+		display: inline-block;
+		color: $color-text;
+		transition: .1s ease-in all;
+		text-decoration: none;
+		&:hover {
+			color: $color-primary;
+			.fa {
+				color: $color-primary;
+			}
+		}
+	}
+	.fa {
+		color: $color-text;
+		margin-right: 5px;
+		transition: .1s ease-in all;
+	}
+	.email {
+		@include breakpoint($small) {
+			padding: 0 50px;
+			width: 50%;
+			border-right: 1px solid $color-text;
+		}
+	}
+	.phone {
+		@include breakpoint($small) {
+			width: 50%;
+			padding: 0 50px;
+		}
+	}
+}
+
+.contact-form {
+	padding: 0 15px;
+	margin-bottom: 80px;
+	@include breakpoint($small) {
+		display: flex;
+		width: 100%;
+		padding: 0;
+		max-width: 1000px;
+		margin: 0 auto 80px;
+	}
+	.form-control {
+		width: calc(100% - 20px);
+		padding: 0 10px;
+		border: none;
+		border-bottom: 2px solid $color-text;
+		margin: 10px 0;
+		line-height: 30px;
+		outline: none;
+		@include breakpoint($small) {
+			margin: 20px 0;
+		}
+		&:focus,
+		&:active {
+			border-color: $color-primary;
+		}
+	}
+	textarea.form-control {
+		padding: 10px;
+		width: calc(100% - 24px);
+		border: 2px solid $color-text;
+		@include breakpoint($small) {
+			padding: 15px;
+			width: calc(100% - 34px);
+			height: 215px;
+		}
+	}
+	.form-error {
+		color: #FF4949;
+		margin: -5px 0 10px;
+		@include breakpoint($small) {
+			position: absolute;
+			top: 60px;
+			&.error-textarea {
+				position: static;
+				margin-top: -10px;
+			}
+		}
+	}
+	.form-group {
+		position: relative;
+	}
+	.has-error {
+		.form-control {
+			border-color: #FF4949;
+		}
+	}
+	.btn-submit {
+		width: 100%;
+	}
+	.form-left {
+		@include breakpoint($small) {
+			width: 50%;
+			margin: 0 20px;
+		}
+	}
+	.form-right {
+		@include breakpoint($small) {
+			width: 50%;
+			margin: 0 20px;
+		}
+	}
+}
+
+.form-success {
+	text-align: center;
+	padding: 0 15px;
+	margin-bottom: 20px;
+	color: green;
+}

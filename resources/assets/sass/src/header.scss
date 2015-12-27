@@ -10,11 +10,12 @@
 	width: 30px;
 	height: 25px;
 	outline: none;
+	transition: .3s ease-out all;
 	@include breakpoint($medium) {
 		top: 45px;
 		right: 30px;
 	}
-	@include breakpoint($medium) {
+	@include breakpoint($large) {
 		top: 60px;
 		right: 45px;
 	}
@@ -55,13 +56,22 @@
 			top: 20px; 
 		}
 	}
+	&.inverse {
+		.bar {
+			background: #000;
+		}
+		&.toggled {
+			.bar {
+				background: #fff;
+			}
+		}
+	}
 }
 
 .header {
 	position: absolute;
 	left: 0;
 	right: 0; 
-	z-index: 1;
 	display: flex;
 	justify-content: center;
 	@include breakpoint($medium) {
@@ -81,11 +91,22 @@
 	}
 	.site-logo {
 		display: inline-block;
+		text-align: center;
+		position: relative;
+		z-index: 2;
 		.mobile {
 			margin-top: 20px;
+			transition: .3s ease-out all;
+			width: 100px;
+			display: inline-block;
 			@include breakpoint($medium) {
 				display: none;
 			}
+			&.project-opened {
+				@include breakpoint(0px 767px) {
+					width: 75px;
+				}
+			}			
 		}
   		.desktop {
   			display: none;

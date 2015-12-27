@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Article;
 use App\Models\Option;
+use App\Models\ProjectLogo;
+use App\Models\ProjectImage;
 
 class PortfolioController extends Controller
 {
@@ -31,6 +33,10 @@ class PortfolioController extends Controller
             $services_list .= '</ul>';
 
             $project->services = $services_list;
+
+            $project->logos = ProjectLogo::where('article_id', $project->id)->get();
+
+            $project->images = ProjectImage::where('article_id', $project->id)->get();
         }
 
         $email  = Option::where('key', 'contact.email')->first()->value;

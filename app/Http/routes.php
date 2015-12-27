@@ -14,6 +14,7 @@
 Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
 Route::get('portfolio', ['as' => 'portfolio', 'uses' => 'PortfolioController@index']);
 Route::get('kontakt', ['as' => 'contact', 'uses' => 'ContactController@index']);
+Route::post('kontakt', ['as' => 'contact.send', 'uses' => 'ContactController@send']);
 
 
 

@@ -67,6 +67,7 @@
 			text-align: center;
 			img {
 				max-width: 80px;
+				display: inline;
 				@include breakpoint($medium) {
 					max-width: 90px;
 				}
