@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html class="page-contact">
+<html class="page-about">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>DIW | Kontakt</title>
+        <title>DIW | O nás</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <link href="{!! asset('images/site/favicon.png') !!}" rel="icon" />
         
@@ -11,7 +11,7 @@
     </head>
     <body>
         <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a     href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
         <div id="perspective" class="perspective">
@@ -33,78 +33,29 @@
                         </a>
                     </header> {{-- /.header --}}
 
-                    <h2 class="section-title">Kontakt</h2>
-
-                    <p class="contact-text">
-                        V prípade záujmu o spoluprácu nás neváhajte kontaktovať cez nižšie uvedený formulár alebo priamo na emailovej adrese <br> <a href="mailto:{{ $email }}"><strong>{{ $email }}</strong></a>
+                    <h2 class="section-title">O nás</h2>
+    
+                    <p class="company-slogan">
+                        {{ $slogan }}
                     </p>
 
-                    <div class="contact-data">
-                        <div class="email"><a href="mailto:{{ $email }}"><i class="fa fa-envelope"></i> {{ $email }}</a></div>
-                        <div class="phone"><a href="tel:{{ $phone }}"><i class="fa fa-phone"></i> {{ $phone }}</a></div>
-                    </div>
+                    <p class="company-description">
+                        {!! $description !!}
+                    </p>
 
-                    @if(Session::has('message'))
-                        <div class="form-success">
-                          {{Session::get('message')}}
-                        </div>
-                    @endif                    
-
-                    {!! Form::open(array('route' => 'contact.send', 'class' => 'contact-form', 'method' => 'POST')) !!}
-
-                        <div class="form-left">
-                            <?php if($errors->first('name')) { ?>
-                            <div class="form-group has-error">
-                            <?php } else { ?>
-                            <div class="form-group">
-                            <?php } ?>
-                                {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Meno*']) !!}
-                                {!! $errors->first('name', '<div class="form-error">:message</div>'); !!}
-                            </div>
-                            <?php if($errors->first('email')) { ?>
-                            <div class="form-group has-error">
-                            <?php } else { ?>
-                            <div class="form-group">
-                            <?php } ?>
-                                {!! Form::text('email', null, ['class' => 'form-control', 'placeholder' => 'E-mail*']) !!}
-                                {!! $errors->first('email', '<div class="form-error">:message</div>'); !!}
-                            </div>                   
-                            <div class="form-group">
-                                {!! Form::text('phone', null, ['class' => 'form-control', 'placeholder' => 'Telefónne číslo']) !!}
-                            </div>                   
-                            <div class="form-group">
-                                {!! Form::text('body', null, ['class' => 'form-control', 'placeholder' => 'Predmet správy']) !!}
-                            </div>                                              
-                        </div>
-
-                        <div class="form-right">
-                            <?php if($errors->first('body')) { ?>
-                            <div class="form-group has-error">
-                            <?php } else { ?>
-                            <div class="form-group">
-                            <?php } ?>
-                                {!! Form::textarea('body', null, ['class' => 'form-control', 'placeholder' => 'Vaša správa']) !!}
-                                {!! $errors->first('body', '<div class="form-error error-textarea">:message</div>'); !!}
-                            </div>
-                            <div class="form-group">
-                                {!! Form::submit('Odoslať', ['class' => 'btn btn-primary btn-submit']) !!}
-                            </div>                            
-                        </div>
-
-                    {!! Form::close() !!}
-
-                    <section class="legal-info">
-                        <h4 class="company-name">{{ $company_data['name'] }}</h4>
-                        <div class="company-data">
-                            <div class="col col-address"><p>{!! $company_data['address'] !!}</p></div>
-                            <div class="col col-legal-left"><p>{!! $company_data['legal_left'] !!}</p></div>
-                            <div class="col col-legal-right"><p>{!! $company_data['legal_right'] !!}</p></div>
-                        </div>
-                    </section> {{-- /.legal-info --}}
-
-                    <section class="google-map">
-                        <div id="google-map"></div>
-                    </section> {{-- /.google-map --}}
+                    <section class="employees">
+                        <ul class="employees-list">
+                            @foreach($employees as $employee)
+                            <li>
+                                <div class="employee-image">
+                                    <img src="{!! asset('images/employees/' . $employee->image) !!}" alt="{{ $employee->name }}">
+                                </div>
+                                <h2 class="employee-name">{{ $employee->name }}</h2>
+                                <h3 class="employee-role">{{ $employee->role }}</h3>
+                            </li>
+                            @endforeach
+                        </ul>
+                    </section>
  
                     <section class="photos">
                         <ul class="photos-list">
@@ -172,11 +123,10 @@
             zoom: 17
           });
           
-          var image = "{!! asset('images/site/map_marker.png') !!}";
           var marker = new google.maps.Marker({
             position: myLatLng,
             map: map,
-            icon: image,
+            // icon: image,
             title: "DIW Studio"
           });
         }    

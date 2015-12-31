@@ -48,7 +48,27 @@
 			{!! Form::label('contact.phone', 'Contact phone:') !!}
 			{!! Form::text('contact.phone', option('contact.phone'), ['class' => 'form-control']) !!}
 			{!! $errors->first('contact.phone', '<div class="text-danger">:message</div>') !!}
-		</div>				
+		</div>	
+		<div class="form-group">
+			{!! Form::label('company.name', 'Company name:') !!}
+			{!! Form::text('company.name', option('company.name'), ['class' => 'form-control']) !!}
+			{!! $errors->first('company.name', '<div class="text-danger">:message</div>') !!}
+		</div>			
+		<div class="form-group">
+			{!! Form::label('company.address', 'Company address:') !!}
+			{!! Form::textarea('company.address', option('company.address'), ['class' => 'form-control']) !!}
+			{!! $errors->first('company.address', '<div class="text-danger">:message</div>') !!}
+		</div>
+		<div class="form-group">
+			{!! Form::label('company.legal.left', 'Company legal data #1:') !!}
+			{!! Form::textarea('company.legal.left', option('company.legal.left'), ['class' => 'form-control']) !!}
+			{!! $errors->first('company.legal.left', '<div class="text-danger">:message</div>') !!}
+		</div>
+		<div class="form-group">
+			{!! Form::label('company.legal.right', 'Company legal data #2:') !!}
+			{!! Form::textarea('company.legal.right', option('company.legal.right'), ['class' => 'form-control']) !!}
+			{!! $errors->first('company.legal.right', '<div class="text-danger">:message</div>') !!}
+		</div>							
 		<div class="form-group">
 			{!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
 		</div>

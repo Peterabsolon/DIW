@@ -5,6 +5,7 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>DIW</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <link href="{!! asset('images/site/favicon.png') !!}" rel="icon" />
         
         <link rel="stylesheet" href="{!! asset('assets/css/app.css') !!}">
     </head>
@@ -106,6 +107,7 @@
             <nav class="navigation">
                 <span><a href="{{ route('home') }}">Domov</a></span>
                 <span><a href="{{ route('portfolio') }}">Portfólio</a></span>
+                <span><a href="{{ route('about') }}">O nás</a></span>
                 <span><a href="{{ route('contact') }}">Kontakt</a></span>
             </nav> {{-- ./navigation --}}
 

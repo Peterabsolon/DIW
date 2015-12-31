@@ -78,13 +78,13 @@
 
 .contact-form {
 	padding: 0 15px;
-	margin-bottom: 80px;
+	max-width: 1000px;
+	margin: 0 auto 50px;
 	@include breakpoint($small) {
 		display: flex;
 		width: 100%;
 		padding: 0;
-		max-width: 1000px;
-		margin: 0 auto 80px;
+		margin-bottom: 80px;
 	}
 	.form-control {
 		width: calc(100% - 20px);
@@ -154,4 +154,34 @@
 	padding: 0 15px;
 	margin-bottom: 20px;
 	color: green;
+}
+
+.legal-info {
+	padding: 0 15px;
+	max-width: 1000px;	
+	margin: 0 auto 50px;
+	@include breakpoint($small) {
+		margin-bottom: 80px;
+	}
+	.company-name,
+	p {
+		color: $color-text;
+	}
+	.company-data {
+		@include breakpoint($small) {
+			display: flex;
+			.col {
+				width: 33.33%;
+			}
+		}
+		@include breakpoint($large) {
+			width: 100%;
+		}
+	}
+}
+
+.google-map {
+	#google-map {
+		height: 500px;
+	}
 }

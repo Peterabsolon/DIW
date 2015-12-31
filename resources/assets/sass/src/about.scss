@@ -1,0 +1,86 @@
+.page-about {
+	.site-logo {
+		.svg path {
+			fill: #000;
+		}
+	}
+	.canvas {
+		background: #fff;
+	}
+	.section-title {
+		padding-top: 120px;
+	}
+}
+
+.company-slogan {
+	color: $color-text;
+	text-align: center;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: 0 15px;
+	max-width: 1000px;
+	margin: 0 auto 20px;
+}
+
+.company-description {
+	padding: 0 15px;
+	text-align: center;
+	color: $color-text;
+	max-width: 1000px;
+	margin: 0 auto 50px;
+	@include breakpoint($small) {
+		padding: 0 30px;
+	}
+	a {
+		color: $color-text;
+		text-decoration: none;
+		transition: .1s ease-in all;
+		&:hover {
+			color: $color-primary;
+		}
+	}
+	br {
+		// display: none;
+		// @include breakpoint(360px) {
+		// 	display: inline;
+		// }
+	}
+}
+
+.employees {
+	max-width: 1000px;
+	margin: 0 auto 50px;
+	padding: 0 15px;
+	.employees-list {
+		@include breakpoint($small) {
+			display: flex;
+			flex-wrap: wrap;
+		}		
+	}
+	li {
+		margin-bottom: 20px;
+		text-align: center;
+		@include breakpoint($small) {
+			width: 50%;
+		}
+		@include breakpoint($medium) {
+			width: 33.33%;
+		}
+	}
+	.employee-image {
+		img {
+			margin: 0 auto;
+		}
+	}
+	.employee-name {
+		color: $color-primary;
+		font-size: 16px;
+		margin: 20px 0 10px;
+	}
+	.employee-role {
+		color: $color-text;
+		font-size: 16px;
+		font-weight: 400;
+		margin: 0 0 5px;
+	}
+}

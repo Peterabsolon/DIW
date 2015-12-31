@@ -29,6 +29,11 @@ return [
 			'all' => 'All Photos',
 			'create' => 'Add New'
 		],
+		'employees' => [
+			'title' => 'Team',
+			'all' => 'All Members',
+			'create' => 'Add New'
+		],		
 		'roles' => 'Roles',
 		'permissions' => 'Permissions',
 		'categories' => 'Categories'

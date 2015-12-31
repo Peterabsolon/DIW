@@ -224,5 +224,4 @@ $(document).ready(function(){
 		$('.projects .slide-' + globalCurrentSlide + ' .project-body')
 			.velocity("scroll", 600);
 	});
-
 });

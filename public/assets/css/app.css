@@ -2111,7 +2111,8 @@ img {
 
 .contact-form {
   padding: 0 15px;
-  margin-bottom: 80px;
+  max-width: 1000px;
+  margin: 0 auto 50px;
 }
 
 @media (min-width: 768px) {
@@ -2121,8 +2122,7 @@ img {
     display: flex;
     width: 100%;
     padding: 0;
-    max-width: 1000px;
-    margin: 0 auto 80px;
+    margin-bottom: 80px;
   }
 }
 
@@ -2209,4 +2209,140 @@ img {
   padding: 0 15px;
   margin-bottom: 20px;
   color: green;
+}
+
+.legal-info {
+  padding: 0 15px;
+  max-width: 1000px;
+  margin: 0 auto 50px;
+}
+
+@media (min-width: 768px) {
+  .legal-info {
+    margin-bottom: 80px;
+  }
+}
+
+.legal-info .company-name,
+.legal-info p {
+  color: #999999;
+}
+
+@media (min-width: 768px) {
+  .legal-info .company-data {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .legal-info .company-data .col {
+    width: 33.33%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .legal-info .company-data {
+    width: 100%;
+  }
+}
+
+.google-map #google-map {
+  height: 500px;
+}
+
+.page-about .site-logo .svg path {
+  fill: #000;
+}
+
+.page-about .canvas {
+  background: #fff;
+}
+
+.page-about .section-title {
+  padding-top: 120px;
+}
+
+.company-slogan {
+  color: #999999;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0 15px;
+  max-width: 1000px;
+  margin: 0 auto 20px;
+}
+
+.company-description {
+  padding: 0 15px;
+  text-align: center;
+  color: #999999;
+  max-width: 1000px;
+  margin: 0 auto 50px;
+}
+
+@media (min-width: 768px) {
+  .company-description {
+    padding: 0 30px;
+  }
+}
+
+.company-description a {
+  color: #999999;
+  text-decoration: none;
+  transition: .1s ease-in all;
+}
+
+.company-description a:hover {
+  color: #30aee3;
+}
+
+.employees {
+  max-width: 1000px;
+  margin: 0 auto 50px;
+  padding: 0 15px;
+}
+
+@media (min-width: 768px) {
+  .employees .employees-list {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
+
+.employees li {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .employees li {
+    width: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .employees li {
+    width: 33.33%;
+  }
+}
+
+.employees .employee-image img {
+  margin: 0 auto;
+}
+
+.employees .employee-name {
+  color: #30aee3;
+  font-size: 16px;
+  margin: 20px 0 10px;
+}
+
+.employees .employee-role {
+  color: #999999;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0 0 5px;
 }

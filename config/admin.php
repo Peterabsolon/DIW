@@ -48,4 +48,8 @@ return [
         'model' => 'Pingpong\Admin\Entities\Service',
         'perpage' => 10
     ],
+    'employee' => [
+        'model' => 'Pingpong\Admin\Entities\Employee',
+        'perpage' => 10
+    ],    
 ];
