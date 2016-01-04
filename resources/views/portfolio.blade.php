@@ -88,21 +88,28 @@
                                     </div>
                                 </div>
                                 <div class="project-body">
+                                    <?php 
+                                        $project_color = $project->color;
+
+                                        if ($project_color == '') {
+                                            $project_color = '000';
+                                        }
+                                    ?>
                                     <button type="button" class="btn-project-hide"><i class="fa fa-angle-double-up"></i></button>
-                                    <div class="intro" style="background-color: #{{ $project->color }}">
+                                    <div class="intro" style="background-color: #{{ $project_color }}">
                                         <h3 class="project-title">{{ $project->title }}</h3>
                                         <div class="project-description">{!! $project->body !!}</div>
                                     </div>
-                                    <div class="divider inverse" style="border-color: transparent #{{ $project->color }}"></div>
+                                    <div class="divider inverse" style="border-color: transparent #{{ $project_color }}"></div>
                                     <div class="gallery-header">
-                                        @if($project_key < 2)
+                                        @if($project_key < 2 && !empty($project->image_left) && !empty($project->image_right))
                                         <div class="image-container">
                                             <img src="images/articles/{{ $project->image_left }}" alt="{{ $project->title }}" class="project-image-left">
                                         </div>
                                         <div class="image-container">
                                             <img src="images/articles/{{ $project->image_right }}" alt="{{ $project->title }}" class="project-image-right">
                                         </div>
-                                        @else
+                                        @elseif (!empty($project->image_left) && !empty($project->image_right))
                                         <div class="image-container">
                                             <img src="" data-src="images/articles/{{ $project->image_left }}" alt="{{ $project->title }}" class="project-image-left">
                                         </div>

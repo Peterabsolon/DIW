@@ -6,7 +6,7 @@
         <title>DIW | Kontakt</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <link href="{!! asset('images/site/favicon.png') !!}" rel="icon" />
-        
+
         <link rel="stylesheet" href="{!! asset('assets/css/app.css') !!}">
     </head>
     <body>
@@ -73,7 +73,7 @@
                                 {!! Form::text('phone', null, ['class' => 'form-control', 'placeholder' => 'Telefónne číslo']) !!}
                             </div>                   
                             <div class="form-group">
-                                {!! Form::text('body', null, ['class' => 'form-control', 'placeholder' => 'Predmet správy']) !!}
+                                {!! Form::text('subject', null, ['class' => 'form-control', 'placeholder' => 'Predmet správy']) !!}
                             </div>                                              
                         </div>
 
@@ -118,11 +118,11 @@
 
                     <section class="social-buttons">
                         <ul class="social-buttons-list">
-                            <li><a class="logo-facebook" href="{{ $social_links['facebook'] }}"><i class="fa fa-facebook"></i></a></li>
-                            <li><a class="logo-twitter" href="{{ $social_links['twitter'] }}"><i class="fa fa-twitter"></i></a></li>
-                            <li><a class="logo-youtube" href="{{ $social_links['youtube'] }}"><i class="fa fa-youtube"></i></a></li>
-                            <li><a class="logo-linkedin" href="{{ $social_links['linkedin'] }}"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a class="logo-instagram" href="{{ $social_links['instagram'] }}"><i class="fa fa-instagram"></i></a></li>
+                            <li><a class="logo-facebook" href="{{ $social_links['facebook'] }}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a class="logo-twitter" href="{{ $social_links['twitter'] }}" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li><a class="logo-youtube" href="{{ $social_links['youtube'] }}" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                            <li><a class="logo-linkedin" href="{{ $social_links['linkedin'] }}" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a class="logo-instagram" href="{{ $social_links['instagram'] }}" target="_blank"><i class="fa fa-instagram"></i></a></li>
                         </ul>
                     </section> {{-- /.social-buttons --}}
 

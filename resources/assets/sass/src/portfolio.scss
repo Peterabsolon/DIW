@@ -11,6 +11,9 @@
 		justify-content: center;
 		transition: .1s ease-in opacity;
 		opacity: 1;
+		@include breakpoint($small) {
+			bottom: 70px; 
+		}
 		&.hidden {
 			opacity: 0;
 		}
