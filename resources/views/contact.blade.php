@@ -6,7 +6,7 @@
         <title>DIW | Kontakt</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <link href="{!! asset('images/site/favicon.png') !!}" rel="icon" />
-
+        
         <link rel="stylesheet" href="{!! asset('assets/css/app.css') !!}">
     </head>
     <body>
@@ -42,6 +42,7 @@
                     <div class="contact-data">
                         <div class="email"><a href="mailto:{{ $email }}"><i class="fa fa-envelope"></i> {{ $email }}</a></div>
                         <div class="phone"><a href="tel:{{ $phone }}"><i class="fa fa-phone"></i> {{ $phone }}</a></div>
+                        <div class="address"><a href="#" class="btn-scroll-to-map"><i class="fa fa-map-marker"></i> Galvaniho 2/A</a href="#" class="btn-scroll-to-map"></div>
                     </div>
 
                     @if(Session::has('message'))
@@ -73,7 +74,7 @@
                                 {!! Form::text('phone', null, ['class' => 'form-control', 'placeholder' => 'Telefónne číslo']) !!}
                             </div>                   
                             <div class="form-group">
-                                {!! Form::text('subject', null, ['class' => 'form-control', 'placeholder' => 'Predmet správy']) !!}
+                                {!! Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'Predmet správy']) !!}
                             </div>                                              
                         </div>
 
@@ -156,6 +157,16 @@
     <!-- <script src="//code.jquery.com/jquery-1.11.3.min.js"></script> -->
     <script src="{!! asset('assets/js/libs.js') !!}"></script>
     <script src="{!! asset('assets/js/app.js') !!}"></script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-72083140-1', 'auto');
+      ga('send', 'pageview');
+    </script>
 
     <script>
         // TODO: Move this code to app.js, at this point we get initMap() not defined

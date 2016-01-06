@@ -222,6 +222,12 @@ $(document).ready(function(){
 
 	$('.btn-scroll-top').on('click', function(){
 		$('.projects .slide-' + globalCurrentSlide + ' .project-body')
-			.velocity("scroll", 600);
+			.velocity('scroll', 600);
+	});
+
+	$('.btn-scroll-to-map').on('click', function(e){
+		e.preventDefault();
+		
+		$('.google-map').velocity('scroll', 600);
 	});
 });

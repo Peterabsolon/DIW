@@ -1,4 +1,4 @@
-$title
+{{ $title }}
 
 <p>
 Meno: {{ $name }}

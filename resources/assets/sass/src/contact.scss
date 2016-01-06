@@ -41,9 +41,9 @@
 	@include breakpoint($small) {
 		display: flex;
 		margin: 50px auto;
-		width: 600px;
+		width: 680px;
 	}
-	a {
+	a, span {
 		margin: 10px 0;
 		display: inline-block;
 		color: $color-text;
@@ -56,6 +56,14 @@
 			}
 		}
 	}
+	span {
+		&:hover {
+			color: $color-text;
+			.fa {
+				color: $color-text;
+			}
+		}
+	}
 	.fa {
 		color: $color-text;
 		margin-right: 5px;
@@ -63,15 +71,22 @@
 	}
 	.email {
 		@include breakpoint($small) {
-			padding: 0 50px;
-			width: 50%;
+			padding: 0 30px;
+			width: 33.33%;
 			border-right: 1px solid $color-text;
 		}
 	}
 	.phone {
 		@include breakpoint($small) {
-			width: 50%;
-			padding: 0 50px;
+			width: 33.33%;
+			padding: 0 30px;
+			border-right: 1px solid $color-text;
+		}
+	}
+	.address {
+		@include breakpoint($small) {
+			width: 33.33%;
+			padding: 0 30px;
 		}
 	}
 }

@@ -54,16 +54,12 @@ class ContactController extends Controller
      */
     public function send(ContactFormRequest $request)
     {
-        $title = $request->get('subject');
-
-        $phone = $request->get('phone');
-
         \Mail::send('emails.contact',
             array(
                 'name' => $request->get('name'),
                 'email' => $request->get('email'),
-                'title' => $title,
-                'phone' => $phone,
+                'title' => $request->get('title'),
+                'phone' => $request->get('phone'),
                 'body' => $request->get('body')
             ), function($message)
         {
