@@ -82,6 +82,10 @@
 			color: #fff;
 			text-decoration: none;
 			font-weight: bold;
+			transition: .15s ease all;
+			&:hover {
+				color: $color-primary;
+			}
 		}
 	}
 }

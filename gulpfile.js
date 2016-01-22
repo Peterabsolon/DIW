@@ -33,6 +33,7 @@ elixir(function(mix) {
 		.scripts([
 			'jquery.min.js',
 			'fastclick.js',
+			'smoothscroll.js',
 			'slick.min.js',
 			'velocity.min.js',
 		], 'public/assets/js/libs.js');

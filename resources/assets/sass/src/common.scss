@@ -249,12 +249,12 @@ img {
 				    	}
 				    }
 				}
-				&.logo-youtube {
-				    background: #cd201f;
+				&.logo-vimeo {
+				    background: #1AB7EA;
 				    @include breakpoint($large) {
 				    	background: #333;
 				    	&:hover {
-				    		background: #cd201f;
+				    		background: #1AB7EA;
 				    	}
 				    }
 				}
